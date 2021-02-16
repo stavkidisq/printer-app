@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationsConfigurations"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationStyles", "ApplicationStyles\ApplicationStyles.csproj", "{C9168FC3-73A6-45F7-9938-26E05E039B0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devices", "Devices\Devices.csproj", "{531B5A21-78F3-4EDB-8C18-EB6F05987C26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Devices", "Devices\Devices.csproj", "{531B5A21-78F3-4EDB-8C18-EB6F05987C26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationCache", "ApplicationCache\ApplicationCache.csproj", "{8CB5C7DD-557E-43D0-98F2-817249B65F55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationCache", "ApplicationCache\ApplicationCache.csproj", "{8CB5C7DD-557E-43D0-98F2-817249B65F55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionInterfaces", "ConnectionInterfaces\ConnectionInterfaces.csproj", "{7F6B7250-E696-4846-B10C-F8291E8E0599}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{8CB5C7DD-557E-43D0-98F2-817249B65F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CB5C7DD-557E-43D0-98F2-817249B65F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CB5C7DD-557E-43D0-98F2-817249B65F55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F6B7250-E696-4846-B10C-F8291E8E0599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F6B7250-E696-4846-B10C-F8291E8E0599}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F6B7250-E696-4846-B10C-F8291E8E0599}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6B7250-E696-4846-B10C-F8291E8E0599}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

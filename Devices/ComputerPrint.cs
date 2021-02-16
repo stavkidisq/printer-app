@@ -16,7 +16,7 @@ namespace ApplicationForPrinter
         public RequestPrintForm RequestConnection()
         {
             return new RequestPrintForm
-                (new DateTime(), _createName(), _createText(), new Styles()); //Создаем информацию о подключении к принтеру
+                (_createName(), _createText(), new Styles()); //Создаем информацию о подключении к принтеру
         }
     }
 }
