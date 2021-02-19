@@ -7,7 +7,6 @@
   <ItemGroup>
     <ProjectReference Include="..\ApplicationStyles\ApplicationStyles.csproj" />
     <ProjectReference Include="..\BusinessInterfaces\BusinessInterfaces.csproj" />
-    <ProjectReference Include="..\Devices\Devices.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,7 +6,8 @@ namespace BusinessInterfaces
 {
     public interface IInteractionWithJson
     {
-        public void SerializeConnectionConfiguration(string name);
+        public void SerializeConnectionConfiguration();
         public void DeserializeConnectionConfiguration(string name);
+        public void ChangingAnExistingText(string name);
     }
 }

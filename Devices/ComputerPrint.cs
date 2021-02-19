@@ -11,12 +11,19 @@ namespace ApplicationForPrinter
 {
     public class ComputerPrint : DevicePrint, IPrint
     {
-        private static new string Name { get; set; } = "Computer-";
+        public override string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public RequestPrintForm RequestConnection()
         {
             return new RequestPrintForm
-                (_createName(), _createText(), new Styles()); //Создаем информацию о подключении к принтеру
+                (CreateNameForDevice(), CreateTextForPrint()); //Создаем информацию о подключении к принтеру
+        }
+
+        public void SendingToTheCache()
+        {
+            Console.WriteLine("The data is serialized...");
+
+            
         }
     }
 }

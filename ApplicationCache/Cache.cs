@@ -1,12 +1,14 @@
-﻿using System;
+﻿using BusinessInterfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ApplicationCache
 {
-    public class Cache
+    public class Cache : AbstractCache
     {
-        public IDictionary<int, string> RequestsConnection;
-        public IDictionary<int, string> ResponseConnection;
+        public override IDictionary<int, IForm> ConnectionCollect { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        
+
     }
 }
