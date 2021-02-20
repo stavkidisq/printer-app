@@ -12,5 +12,10 @@ namespace ApplicationForPrinter
         {
 
         }
+
+        public void ResponseConnection(ComputerPrint computer)
+        {
+
+        }
     }
 }

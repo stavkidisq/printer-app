@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Devices", "Devices\Devices.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationCache", "ApplicationCache\ApplicationCache.csproj", "{8CB5C7DD-557E-43D0-98F2-817249B65F55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionInterfaces", "ConnectionInterfaces\ConnectionInterfaces.csproj", "{7F6B7250-E696-4846-B10C-F8291E8E0599}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectionInterfaces", "ConnectionInterfaces\ConnectionInterfaces.csproj", "{7F6B7250-E696-4846-B10C-F8291E8E0599}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithDocuments", "WorkingWithDocuments\WorkingWithDocuments.csproj", "{9C1B44F9-8402-4D53-BE6B-8CE2C7FC1656}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{7F6B7250-E696-4846-B10C-F8291E8E0599}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F6B7250-E696-4846-B10C-F8291E8E0599}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F6B7250-E696-4846-B10C-F8291E8E0599}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C1B44F9-8402-4D53-BE6B-8CE2C7FC1656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C1B44F9-8402-4D53-BE6B-8CE2C7FC1656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C1B44F9-8402-4D53-BE6B-8CE2C7FC1656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C1B44F9-8402-4D53-BE6B-8CE2C7FC1656}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

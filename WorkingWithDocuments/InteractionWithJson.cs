@@ -1,5 +1,6 @@
 ﻿using ApplicationStyles;
 using BusinessInterfaces;
+using Devices;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,12 +13,21 @@ namespace ApplicationForPrinter
     public class InteractionWithJson : IInteractionWithJson, IDisposable
     {
         internal IForm Configurations { get; set; }
+        private IForm _request;
 
-        public async void SerializeConnectionConfiguration()
+        public async void SerializeConnectionConfiguration(int id)
         {
-            using (FileStream fs = new FileStream("Connection {}", FileMode.OpenOrCreate)) //Создание файла, который будет использоваться для хранения запросов
+            using (FileStream fs = new FileStream($"Connection {id}.json", FileMode.OpenOrCreate)) //Создание файла, который будет использоваться для хранения запросов
             {
                 await JsonSerializer.SerializeAsync<IForm>(fs, new ComputerPrint().RequestConnection()); // Ассинхронная сериализация
+            }
+        }
+
+        public async void SerializeInformationAboutDevice(string name)
+        {
+            using(FileStream fs = new FileStream("config.json", FileMode.OpenOrCreate))
+            {
+                await JsonSerializer.SerializeAsync<Computer>(fs, new Computer(name));
             }
         }
 
@@ -29,7 +39,7 @@ namespace ApplicationForPrinter
             }
         }
 
-        public async void ChangingAnExistingText(string name)
+        public async void ChangingAnExistingText(string name) // Чтение текста отправленного запроса через файл
         {
             using(FileStream fs = new FileStream(name, FileMode.OpenOrCreate))
             {
@@ -42,6 +52,20 @@ namespace ApplicationForPrinter
             }
 
             Console.WriteLine("The text of the file was successfully changed!");
+        }
+
+        public async Task<IForm> SearchInformationAboutRequest()
+        {
+            for(int i = 0; i < IForm.Id; i++)
+            {
+                using(FileStream fs = new FileStream($"Request {i}.json", FileMode.OpenOrCreate))
+                {
+                    IForm request = await JsonSerializer.DeserializeAsync<IForm>(fs);
+                    _request = request;
+                }
+            }
+
+            return _request;
         }
 
         public void Dispose()

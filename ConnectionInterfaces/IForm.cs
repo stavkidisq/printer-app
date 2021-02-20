@@ -7,7 +7,7 @@ namespace BusinessInterfaces
 {
     public interface IForm
     {
-        public int Id { get; set; }
+        public static int Id { get; set; }
         public DateTime Time { get; set; }
         public string RecipientName { get; set; }
         public string SenderName { get; set; }

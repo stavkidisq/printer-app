@@ -47,10 +47,5 @@ namespace Devices
 
             return new TextForm(title, text);
         }
-
-        public void CreateIdForConnection()
-        {
-
-        }
     }
 }

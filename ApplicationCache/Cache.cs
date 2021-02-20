@@ -7,8 +7,18 @@ namespace ApplicationCache
 {
     public class Cache : AbstractCache
     {
-        public override IDictionary<int, IForm> ConnectionCollect { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        
+        private Dictionary<int, IForm> connectionCollect;
 
+        public override IDictionary<int, IForm> ConnectionCollect
+        {
+            get
+            {
+                return connectionCollect;
+            }
+            set
+            {
+                
+            }
+        }
     }
 }
