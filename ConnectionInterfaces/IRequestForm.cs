@@ -4,6 +4,6 @@ namespace BusinessInterfaces
 {
     public interface IRequestForm : IForm
     {
-        public TextForm Text { get; set; }
+        public DocumentForPrint Document { get; set; }
     }
 }

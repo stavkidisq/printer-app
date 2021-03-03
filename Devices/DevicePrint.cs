@@ -12,40 +12,44 @@ namespace Devices
 
         public string CreateNameForDevice()
         {
-            Console.WriteLine("Enter the number of your computer consists of 4 characters...");
+            Console.WriteLine("The computer is given a name...");
+
             string name = null;
 
-            while (!name.Length.Equals(4))
-            {
-                Console.WriteLine("The data enterned is incorrect!");
-                name = Console.ReadLine();
-            }
+            name += new Random().Next(1000, 9999);
 
             Name += name;
+
+            Console.WriteLine("The computer has been given a name!");
+
             return Name;
         }
 
-        public TextForm CreateTextForPrint()
+        public DocumentForPrint CreateTextForPrint(int id)
         {
+            
             string title = null;
             string text;
 
             Console.WriteLine("Enter the title for the text...");
 
-            while (title.Equals(null))
+            while(title.Equals(null) && title.Length < 5)
             {
                 Console.WriteLine("The data enterned is incorrect!");
                 title = Console.ReadLine();
             }
 
+            Console.WriteLine("Enter the text...");
+
             text = Console.ReadLine();
 
-            if (text.Equals(null))
+            if (text.Equals(null) && text.Length < 10)
             {
-                text = "The text is missing!";
+                Console.WriteLine("The text is incorrect!");
+                text = Console.ReadLine();
             }
 
-            return new TextForm(title, text);
+            return new DocumentForPrint(id, title, text);
         }
     }
 }

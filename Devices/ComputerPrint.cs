@@ -7,6 +7,8 @@ namespace ApplicationForPrinter
 {
     public class ComputerPrint : DevicePrint, IPrint
     {
+        private DocumentForPrint Document { get; set; }
+
         public override string Name { get; set; }
 
         public RequestPrintForm RequestConnection()

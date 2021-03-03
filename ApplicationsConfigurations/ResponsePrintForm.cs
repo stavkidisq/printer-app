@@ -19,7 +19,6 @@ namespace ApplicationsConfigurations
         public ResponsePrintForm()
         {
             Id = default;
-
         }
     }
 }

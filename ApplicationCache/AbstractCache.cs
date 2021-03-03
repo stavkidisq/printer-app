@@ -12,11 +12,11 @@ namespace ApplicationCache
         public abstract IDictionary<int, IForm> ConnectionCollect { get; set; }
         public abstract InteractionWithJson JsonFunctions { get; set; }
 
-        public void WriteInformationAboutRequestConnection() // Запись информации о запросе, напрваленном принтеру
+        public void WriteInformationAboutRequestConnection(int id) // Запись информации о запросе, напрваленном принтеру
         {
             Console.WriteLine("Recording your request...");
 
-            JsonFunctions.SerializeConnectionConfiguration(); // Серриализация информации
+            JsonFunctions.SerializeConnectionConfiguration(id); // Серриализация информации
 
             Console.WriteLine("The information your request was recorded succesfully!");
         }
