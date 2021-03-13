@@ -9,7 +9,6 @@ namespace ApplicationCache
 {
     public abstract class AbstractCache
     {
-        public abstract IDictionary<int, IForm> ConnectionCollect { get; set; }
         public abstract InteractionWithJson JsonFunctions { get; set; }
 
         public void WriteInformationAboutRequestConnection(int id) // Запись информации о запросе, напрваленном принтеру

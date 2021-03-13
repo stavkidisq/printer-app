@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApplicationForPrinter\ApplicationForPrinter.csproj" />
     <ProjectReference Include="..\ApplicationStyles\ApplicationStyles.csproj" />
     <ProjectReference Include="..\BusinessInterfaces\BusinessInterfaces.csproj" />
     <ProjectReference Include="..\WorkingWithDocuments\WorkingWithDocuments.csproj" />

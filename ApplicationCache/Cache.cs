@@ -1,24 +1,27 @@
-﻿using BusinessInterfaces;
+﻿using ApplicationForPrinter;
+using ApplicationStyles;
+using BusinessInterfaces;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace ApplicationCache
 {
     public class Cache : AbstractCache
     {
-        private Dictionary<int, IForm> connectionCollect;
+        public static InteractionWithJson JsonFunctions { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public override IDictionary<int, IForm> ConnectionCollect
+        public static void AddToCache(DocumentForPrint doc)
         {
-            get
+            string fileName = doc.Name + ".txt";
+
+            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
             {
-                return connectionCollect;
+                fs.Write(Encoding.UTF8.GetBytes(doc.Text));
             }
-            set
-            {
-                
-            }
+
+            JSonFunctions
         }
     }
 }

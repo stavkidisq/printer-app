@@ -19,7 +19,15 @@ namespace ApplicationForPrinter
         {
             using (FileStream fs = new FileStream($"Connection {id}.json", FileMode.OpenOrCreate)) //Создание файла, который будет использоваться для хранения запросов
             {
-                await JsonSerializer.SerializeAsync<IForm>(fs, new ComputerPrint().RequestConnection()); // Ассинхронная сериализация
+                await JsonSerializer.SerializeAsync<IForm>(fs, new ComputerPrint().RequestConnection(id)); // Ассинхронная сериализация
+            }
+        }
+
+        public async void CreateRegistryOfDocuments(DocumentForPrint doc)
+        {
+            using(FileStream fs = new FileStream("Registry.json", FileMode.OpenOrCreate))
+            {
+                await JsonSerializer.SerializeAsync<DocumentForPrint>(fs, doc);
             }
         }
 
@@ -39,22 +47,23 @@ namespace ApplicationForPrinter
             }
         }
 
+        //TODO: Не работает текст
         public async void ChangingAnExistingText(string name) // Чтение текста отправленного запроса через файл
         {
-            using(FileStream fs = new FileStream(name, FileMode.OpenOrCreate))
-            {
-                RequestPrintForm formForRead = await JsonSerializer.DeserializeAsync<RequestPrintForm>(fs);
+            //    using(FileStream fs = new FileStream(name, FileMode.OpenOrCreate))
+            //    {
+            //        RequestPrintForm formForRead = await JsonSerializer.DeserializeAsync<RequestPrintForm>(fs);
 
-                formForRead.Text.Text = Console.ReadLine();
-                fs.Write(Encoding.UTF8.GetBytes(formForRead.Text.Text));
+            //        formForRead.Text.Text = Console.ReadLine();
+            //        fs.Write(Encoding.UTF8.GetBytes(formForRead.Text.Text));
 
-                await JsonSerializer.SerializeAsync<RequestPrintForm>(fs, new ComputerPrint().RequestConnection());
-            }
+            //        await JsonSerializer.SerializeAsync<RequestPrintForm>(fs, new ComputerPrint().RequestConnection());
+            //    }
 
-            Console.WriteLine("The text of the file was successfully changed!");
+            //    Console.WriteLine("The text of the file was successfully changed!");
         }
 
-        public async Task<IForm> SearchInformationAboutRequest()
+    public async Task<IForm> SearchInformationAboutRequest()
         {
             for(int i = 0; i < IForm.Id; i++)
             {

@@ -11,12 +11,15 @@ namespace ApplicationForPrinter
 
         public override string Name { get; set; }
 
-        public RequestPrintForm RequestConnection()
+        public RequestPrintForm RequestConnection(int id)
         {
             Name = CreateNameForDevice();
 
-            return new RequestPrintForm
-                (Name, CreateTextForPrint()); //Создаем информацию о подключении к принтеру
+            //return new RequestPrintForm
+            //(Name, CreateTextForPrint(id)); //Создаем информацию о подключении к принтеру
+
+            //TODO: Доделать возврат запроса от пользователя к принтеру.
+            return null;
         }
     }
 }

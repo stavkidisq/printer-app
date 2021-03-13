@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApplicationCache\ApplicationCache.csproj" />
     <ProjectReference Include="..\ApplicationsConfigurations\ApplicationsConfigurations.csproj" />
     <ProjectReference Include="..\ApplicationStyles\ApplicationStyles.csproj" />
     <ProjectReference Include="..\BusinessInterfaces\BusinessInterfaces.csproj" />

@@ -25,19 +25,9 @@ namespace Devices
             return Name;
         }
 
-        public DocumentForPrint CreateTextForPrint(int id)
+        private string CreateTextForPrint()
         {
-            
-            string title = null;
             string text;
-
-            Console.WriteLine("Enter the title for the text...");
-
-            while(title.Equals(null) && title.Length < 5)
-            {
-                Console.WriteLine("The data enterned is incorrect!");
-                title = Console.ReadLine();
-            }
 
             Console.WriteLine("Enter the text...");
 
@@ -49,7 +39,27 @@ namespace Devices
                 text = Console.ReadLine();
             }
 
-            return new DocumentForPrint(id, title, text);
+            return text;
+        }
+
+        private string CreateNameTextForPrint()
+        {
+            Console.WriteLine("Enter the title for the text...");
+
+            string name = Console.ReadLine();
+
+            while (name.Equals(null))
+            {
+                Console.WriteLine("The data enterned is incorrect!");
+                name = Console.ReadLine();
+            }
+
+            return name;
+        }
+
+        public DocumentForPrint CreateDocumentForPrint(int id)
+        {
+            return new DocumentForPrint(id, CreateNameTextForPrint(), CreateTextForPrint());
         }
     }
 }
