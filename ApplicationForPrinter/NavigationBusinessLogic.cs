@@ -13,8 +13,8 @@ namespace ApplicationForPrinter
 
         private IEnumerable<string> _menuList = new List<string>()
         {
-            "Working writh a documents",
-            "Quit program"
+            "1 - [Working with a documents]",
+            "2 - [Quit program]"
         };
 
         public void MainMenu()
@@ -41,10 +41,10 @@ namespace ApplicationForPrinter
                 switch (number)
                 {
                     case 1:
-                        WorkingWithDocuments();
+                        WorkingWithDocuments(); // Работа с документами
                         break;
                     case 2:
-                        QuitProgram();
+                        QuitProgram(); // Выход из программы
                         break;
                     default:
                         Console.WriteLine("Invalid number!");
@@ -79,6 +79,8 @@ namespace ApplicationForPrinter
         public void WorkingWithDocuments()
         {
             Console.WriteLine("Are you want to see ready document or create a new document?");
+            Console.WriteLine("1 - [Show a ready document]");
+            Console.WriteLine("2 - [Create a new document]");
 
             int _num = 0;
             string number = Console.ReadLine();
@@ -88,11 +90,11 @@ namespace ApplicationForPrinter
                 switch (_num)
                 {
                     case 1:
-                        InformationAboutDocumentLogic.ShowReadyDocument();
+                        InformationAboutDocumentLogic.ShowReadyDocument(); // Просмотреть готовые документы
                         MainMenu();
                         break;
                     case 2:
-                        InformationAboutDocumentLogic.CreateDocument();
+                        InformationAboutDocumentLogic.CreateDocument(); //Создать новый документ
                         MainMenu();
                         break;
                 }

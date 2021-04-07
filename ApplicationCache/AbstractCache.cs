@@ -9,7 +9,7 @@ namespace ApplicationCache
 {
     public abstract class AbstractCache
     {
-        public abstract InteractionWithJson JsonFunctions { get; set; }
+        public static InteractionWithJson JsonFunctions { get; set; }
 
         public void WriteInformationAboutRequestConnection(int id) // Запись информации о запросе, напрваленном принтеру
         {
@@ -28,7 +28,5 @@ namespace ApplicationCache
 
             Console.WriteLine("The information was recorded succesfully!");
         }
-
-
     }
 }

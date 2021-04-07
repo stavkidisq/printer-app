@@ -9,17 +9,18 @@ namespace ApplicationForPrinter
 {
     public class DocumentLogic
     {
-        public DocumentForPrint CreateDocument() //Создание нового документа
+        public void CreateDocument() //Создание нового документа
         {
             Console.Clear();
             Console.WriteLine($"Old count List: {StorageInformationAboutLogic.documents.Count}"); //test
 
             var _document = new StorageInformationAboutLogic().InformationAboutComputerPrint.CreateDocumentForPrint(StorageInformationAboutLogic.documents.Count + 1);
 
-            if (StorageInformationAboutLogic.documents.Find(doc => doc.Name == _document.Name) == null)
+            if (StorageInformationAboutLogic.documents.Find(doc=> doc.Name == _document.Name) == null)
             {
                 StorageInformationAboutLogic.documents.Add(_document); // Запись документа в листинг
                 Cache.AddToCache(_document);
+                Cache.AddInformationAboutTheFiles(StorageInformationAboutLogic.documents);
             }
             else
             {
@@ -28,8 +29,8 @@ namespace ApplicationForPrinter
 
             Console.WriteLine($"New count List: {StorageInformationAboutLogic.documents.Count}"); //test
 
-            return StorageInformationAboutLogic.documents.FirstOrDefault
-                (doc => doc.Id == StorageInformationAboutLogic.documents.Count); // Создание документа для печати
+            //return StorageInformationAboutLogic.documents.FirstOrDefault
+            //    (doc => doc.Id == StorageInformationAboutLogic.documents.Count); // Создание документа для печати
         }
 
         public DocumentForPrint ShowReadyDocument()

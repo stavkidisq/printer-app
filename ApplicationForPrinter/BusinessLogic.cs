@@ -34,6 +34,7 @@ namespace ApplicationForPrinter
 
         public BusinessLogic()
         {
+            StorageInformationAboutLogic.FillList();
             new NavigationBusinessLogic().MainMenu();
         }
 

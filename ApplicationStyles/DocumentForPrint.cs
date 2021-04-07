@@ -6,6 +6,8 @@ namespace ApplicationStyles
 {
     public class DocumentForPrint
     {
+        public DocumentForPrint() { }
+
         public DocumentForPrint(int id, string name, string text)
         {
             Id = id;
