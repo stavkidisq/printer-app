@@ -81,6 +81,7 @@ namespace ApplicationForPrinter
             Console.WriteLine("Are you want to see ready document or create a new document?");
             Console.WriteLine("1 - [Show a ready document]");
             Console.WriteLine("2 - [Create a new document]");
+            Console.WriteLine("3 - [Delete a document]");
 
             int _num = 0;
             string number = Console.ReadLine();
@@ -90,20 +91,30 @@ namespace ApplicationForPrinter
                 switch (_num)
                 {
                     case 1:
-                        InformationAboutDocumentLogic.ShowReadyDocument(); // Просмотреть готовые документы
+                        Console.Clear();
+                        var readyDocument = InformationAboutDocumentLogic.ShowReadyDocument(); // Просмотреть готовые документы
+                        Console.WriteLine($"Name:  \n {readyDocument.Name} \nText:  \n {readyDocument.Text}");
                         MainMenu();
                         break;
                     case 2:
+                        Console.Clear();
                         InformationAboutDocumentLogic.CreateDocument(); //Создать новый документ
+                        MainMenu();
+                        break;
+                    case 3:
+                        Console.Clear();
+                        InformationAboutDocumentLogic.DeleteDocument();
                         MainMenu();
                         break;
                 }
             }
         }
 
-        public void QuitProgram()
-        {
 
+
+        public int QuitProgram()
+        {
+            return 0;
         }
 
     }

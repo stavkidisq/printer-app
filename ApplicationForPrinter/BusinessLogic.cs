@@ -11,12 +11,6 @@ namespace ApplicationForPrinter
 {
     public class BusinessLogic : ILogic
     {
-        private IEnumerable<string> _documentList = new List<string>()
-        {
-            "View existing documents",
-            "Create document"
-        };
-
         private RequestPrintForm _request;
 
         private RequestPrintForm Request 

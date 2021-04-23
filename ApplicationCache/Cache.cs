@@ -35,12 +35,21 @@ namespace ApplicationCache
             }
         }
 
-        public static async Task<List<DocumentForPrint>> TryEqualNames() // Проверка эквивалентности имен
+        public static async void _AddInformationAboutTheFiles(List<DocumentForPrint> documents)
+        {
+            using (FileStream fs = new FileStream("Configurations.json", FileMode.Create))
+            {
+                await JsonSerializer.SerializeAsync<List<DocumentForPrint>>(fs, documents);
+            }
+        }
+
+        public static async Task<List<DocumentForPrint>> UpdateList() // Проверка эквивалентности имен
         {
             List<DocumentForPrint> documents = new List<DocumentForPrint>();
             using (FileStream fs = new FileStream("Configurations.json", FileMode.Open))
             {
-                documents = await JsonSerializer.DeserializeAsync<List<DocumentForPrint>>(fs);
+                if(fs.Length != 0) // Сделать проверку того, что нельзя вводить в конфигурационный файл что попало
+                    documents = await JsonSerializer.DeserializeAsync<List<DocumentForPrint>>(fs);
             }
 
             return documents;

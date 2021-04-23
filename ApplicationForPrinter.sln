@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationCache", "Applica
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectionInterfaces", "ConnectionInterfaces\ConnectionInterfaces.csproj", "{7F6B7250-E696-4846-B10C-F8291E8E0599}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithDocuments", "WorkingWithDocuments\WorkingWithDocuments.csproj", "{9C1B44F9-8402-4D53-BE6B-8CE2C7FC1656}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithDocuments", "WorkingWithDocuments\WorkingWithDocuments.csproj", "{9C1B44F9-8402-4D53-BE6B-8CE2C7FC1656}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{657B8FDE-8D1C-4BC8-8F16-525B88FCB256}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{9C1B44F9-8402-4D53-BE6B-8CE2C7FC1656}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C1B44F9-8402-4D53-BE6B-8CE2C7FC1656}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C1B44F9-8402-4D53-BE6B-8CE2C7FC1656}.Release|Any CPU.Build.0 = Release|Any CPU
+		{657B8FDE-8D1C-4BC8-8F16-525B88FCB256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{657B8FDE-8D1C-4BC8-8F16-525B88FCB256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{657B8FDE-8D1C-4BC8-8F16-525B88FCB256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{657B8FDE-8D1C-4BC8-8F16-525B88FCB256}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

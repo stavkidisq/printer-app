@@ -10,6 +10,6 @@ namespace ApplicationForPrinter
         void NavigationAtMainMenu();
         void NavigationAtTheTextRedactorMenu();
         void WorkingWithDocuments();
-        void QuitProgram();
+        int QuitProgram();
     }
 }

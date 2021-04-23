@@ -20,7 +20,7 @@ namespace ApplicationForPrinter
 
         public static async void FillList()
         {
-            documents = await ApplicationCache.Cache.TryEqualNames();
+            documents = await ApplicationCache.Cache.UpdateList();
         }
     }
 }

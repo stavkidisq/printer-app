@@ -69,5 +69,45 @@ namespace ApplicationForPrinter
 
             return null;
         }
+
+        public void DeleteDocument()
+        {
+            Console.WriteLine("List of documents");
+            var documents = StorageInformationAboutLogic.documents;
+
+            foreach (var document in documents)
+            {
+                Console.WriteLine(document.Name);
+            }
+            var dName = Console.ReadLine();
+
+            var doc = documents.FirstOrDefault(_doc => dName == _doc.Name);
+
+            if(doc == null)
+            {
+                Console.WriteLine("This name is invalid!");
+            }
+            else
+            {
+                int id = doc.Id;
+
+                documents.Remove(doc);
+                UpdateIdForList(documents, id);
+                Cache._AddInformationAboutTheFiles(documents);
+            }
+        }
+
+        public void UpdateIdForList(List<DocumentForPrint> documents, int id)
+        {
+            foreach(var document in documents)
+            {
+                if(document.Id > id)
+                {
+                    document.Id -= 1;
+                }
+            }
+        }
     }
+
+
 }
