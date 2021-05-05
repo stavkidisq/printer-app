@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ApplicationStyles;
+using BusinessInterfaces;
+using Devices;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -70,6 +73,9 @@ namespace ApplicationForPrinter
                         MainMenu();
                         break;
                     case 2:
+                        SendInformationAboutDocumentToPrinter();
+                        break;
+                    default:
                         //PrintTheText();
                         break;
                 }
@@ -93,7 +99,8 @@ namespace ApplicationForPrinter
                     case 1:
                         Console.Clear();
                         var readyDocument = InformationAboutDocumentLogic.ShowReadyDocument(); // Просмотреть готовые документы
-                        Console.WriteLine($"Name:  \n {readyDocument.Name} \nText:  \n {readyDocument.Text}");
+                        if(readyDocument != null)
+                            Console.WriteLine($"Name:  \n {readyDocument.Name} \nText:  \n {readyDocument.Text}");
                         MainMenu();
                         break;
                     case 2:
@@ -108,6 +115,20 @@ namespace ApplicationForPrinter
                         break;
                 }
             }
+        }
+
+        public void SendInformationAboutDocumentToPrinter()
+        {
+            var document = InformationAboutDocumentLogic.ShowReadyDocument();
+
+            int number = new Random().Next(0, 1000);
+
+            var computer = new Computer("Computer-" + number);
+            var printer = new Printer("Printer-" + number + 1);
+
+            var request = new RequestPrintForm(printer.Name, document, Policy.Public);
+
+
         }
 
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ApplicationCache;
+using System.IO;
 
 namespace ApplicationForPrinter
 {
@@ -14,13 +15,16 @@ namespace ApplicationForPrinter
             Console.Clear();
             Console.WriteLine($"Old count List: {StorageInformationAboutLogic.documents.Count}"); //test
 
-            var _document = new StorageInformationAboutLogic().InformationAboutComputerPrint.CreateDocumentForPrint(StorageInformationAboutLogic.documents.Count + 1);
+            var _document = 
+                new StorageInformationAboutLogic().InformationAboutComputerPrint
+                .CreateDocumentForPrint(StorageInformationAboutLogic.documents.Count + 1);
 
-            if (StorageInformationAboutLogic.documents.Find(doc=> doc.Name == _document.Name) == null)
+            if(CheckingTheFileName(_document))
             {
                 StorageInformationAboutLogic.documents.Add(_document); // Запись документа в листинг
                 Cache.AddToCache(_document);
-                Cache.AddInformationAboutTheFiles(StorageInformationAboutLogic.documents);
+                Cache.AddInformationAboutTheFiles
+                    (StorageInformationAboutLogic.documents, System.IO.FileMode.OpenOrCreate);
             }
             else
             {
@@ -32,6 +36,9 @@ namespace ApplicationForPrinter
             //return StorageInformationAboutLogic.documents.FirstOrDefault
             //    (doc => doc.Id == StorageInformationAboutLogic.documents.Count); // Создание документа для печати
         }
+
+        public bool CheckingTheFileName(DocumentForPrint _document)
+            => StorageInformationAboutLogic.documents.Find(doc => doc.Name == _document.Name) == null;
 
         public DocumentForPrint ShowReadyDocument()
         {
@@ -47,14 +54,12 @@ namespace ApplicationForPrinter
                 string dName = Console.ReadLine();
 
                 var document =
-                    StorageInformationAboutLogic.documents.FirstOrDefault(item => dName == item.Name);
+                    StorageInformationAboutLogic.documents.Find(item => dName == item.Name);
 
                 if (document == null)
                 {
                     Console.Clear();
                     Console.WriteLine("There is no document with this name!");
-                 
-                    ShowReadyDocument();
                 }
                 else
                 {
@@ -93,7 +98,7 @@ namespace ApplicationForPrinter
 
                 documents.Remove(doc);
                 UpdateIdForList(documents, id);
-                Cache._AddInformationAboutTheFiles(documents);
+                Cache.AddInformationAboutTheFiles(documents, FileMode.Open);
             }
         }
 

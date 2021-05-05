@@ -1,5 +1,6 @@
 ﻿using ApplicationForPrinter;
 using ApplicationsConfigurations;
+using ApplicationStyles;
 using BusinessInterfaces;
 using System;
 using System.Collections.Generic;

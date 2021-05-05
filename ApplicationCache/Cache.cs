@@ -27,17 +27,9 @@ namespace ApplicationCache
             }
         }
 
-        public static async void AddInformationAboutTheFiles(List<DocumentForPrint> documents)
+        public static async void AddInformationAboutTheFiles(List<DocumentForPrint> documents, FileMode fmode)
         {
-            using (FileStream fs = new FileStream("Configurations.json", FileMode.OpenOrCreate))
-            {
-                await JsonSerializer.SerializeAsync<List<DocumentForPrint>>(fs, documents);
-            }
-        }
-
-        public static async void _AddInformationAboutTheFiles(List<DocumentForPrint> documents)
-        {
-            using (FileStream fs = new FileStream("Configurations.json", FileMode.Create))
+            using (FileStream fs = new FileStream("Configurations.json", fmode))
             {
                 await JsonSerializer.SerializeAsync<List<DocumentForPrint>>(fs, documents);
             }

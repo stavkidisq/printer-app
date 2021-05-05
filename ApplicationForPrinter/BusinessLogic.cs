@@ -42,5 +42,10 @@ namespace ApplicationForPrinter
             Interaction.SerializeInformationAboutDevice(name); //Сериализуем информацию о компьютере
             Interaction.SerializeConnectionConfiguration(Request.Id); //Серриализуем информацию о запросе от компьютера
         }
+
+        public void SendInformation()
+        {
+            Console.WriteLine("START OF SEND INFORMATION!");
+        }
     }
 }
