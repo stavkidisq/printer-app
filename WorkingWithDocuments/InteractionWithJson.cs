@@ -15,13 +15,14 @@ namespace ApplicationForPrinter
         //internal IForm Configurations { get; set; }
         //private IForm _request;
 
-        //public async void SerializeConnectionConfiguration(int id)
-        //{
-        //    using (FileStream fs = new FileStream($"Connection {id}.json", FileMode.OpenOrCreate)) //Создание файла, который будет использоваться для хранения запросов
-        //    {
-        //        await JsonSerializer.SerializeAsync<IForm>(fs, new ComputerPrint().RequestConnection(id)); // Ассинхронная сериализация
-        //    }
-        //}
+        public async void SerializeConnectionConfiguration(int id, DocumentForPrint document)
+        {
+            using (FileStream fs = new FileStream($"Connection {id}.json", FileMode.OpenOrCreate)) //Создание файла, который будет использоваться для хранения запросов
+            {
+                await JsonSerializer.SerializeAsync<IForm>
+                    (fs, new ComputerWorkWithConnection().RequestConnection(id, document)); // Ассинхронная сериализация
+            }
+        }
 
         //public async void CreateRegistryOfDocuments(DocumentForPrint doc)
         //{

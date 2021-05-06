@@ -8,7 +8,7 @@ namespace ApplicationForPrinter
     {
         void MainMenu();
         void NavigationAtMainMenu();
-        void NavigationAtTheTextRedactorMenu();
+        //void NavigationAtTheTextRedactorMenu();
         void WorkingWithDocuments();
         int QuitProgram();
     }

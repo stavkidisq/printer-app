@@ -47,6 +47,9 @@ namespace ApplicationForPrinter
                         WorkingWithDocuments(); // Работа с документами
                         break;
                     case 2:
+                        SendInformationAboutDocumentToPrinter(); // Распечатка файла
+                        break;
+                    case 3:
                         QuitProgram(); // Выход из программы
                         break;
                     default:
@@ -57,30 +60,30 @@ namespace ApplicationForPrinter
             }
         }
 
-        public void NavigationAtTheTextRedactorMenu()
-        {
-            int _navigation;
+        //public void NavigationAtTheTextRedactorMenu()
+        //{
+        //    int _navigation;
 
-            Console.WriteLine("Save and go back to the main menu or print text (1 - Quit, 2 - Print)?");
+        //    Console.WriteLine("Save and go back to the main menu or print text (1 - Quit, 2 - Print)?");
 
-            string navigation = Console.ReadLine();
+        //    string navigation = Console.ReadLine();
 
-            if (int.TryParse(navigation, out _navigation))
-            {
-                switch (_navigation)
-                {
-                    case 1:
-                        MainMenu();
-                        break;
-                    case 2:
-                        SendInformationAboutDocumentToPrinter();
-                        break;
-                    default:
-                        //PrintTheText();
-                        break;
-                }
-            }
-        }
+        //    if (int.TryParse(navigation, out _navigation))
+        //    {
+        //        switch (_navigation)
+        //        {
+        //            case 1:
+        //                MainMenu();
+        //                break;
+        //            case 2:
+        //                SendInformationAboutDocumentToPrinter();
+        //                break;
+        //            default:
+        //                //PrintTheText();
+        //                break;
+        //        }
+        //    }
+        //}
 
         public void WorkingWithDocuments()
         {

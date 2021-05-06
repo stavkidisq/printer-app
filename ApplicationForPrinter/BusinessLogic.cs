@@ -34,13 +34,8 @@ namespace ApplicationForPrinter
 
         public void SendingInformationAboutRequest()
         {
-            //string name = new StorageInformationAboutLogic()//Вбиваем имя переменной
 
-            new StorageInformationAboutLogic().InformationAboutComputerPrint.RequestConnection(StorageInformationAboutLogic.documents.Count + 1); //Создаем запрос от компьютера
-
-            /*InformationAboutComputer = new Computer(name);*/ //Создаем объект компьютера
-            //Interaction.SerializeInformationAboutDevice(name); //Сериализуем информацию о компьютере
-            //Interaction.SerializeConnectionConfiguration(Request.Id); //Серриализуем информацию о запросе от компьютера
+           //Request = new ComputerWorkWithConnection().RequestConnection()
         }
 
         public void SendInformation()

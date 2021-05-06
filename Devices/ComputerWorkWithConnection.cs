@@ -1,4 +1,5 @@
-﻿using BusinessInterfaces;
+﻿using ApplicationStyles;
+using BusinessInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,15 +8,14 @@ namespace Devices
 {
     public class ComputerWorkWithConnection
     {
-        public RequestPrintForm RequestConnection(int id)
+        public RequestPrintForm RequestConnection(int id, DocumentForPrint document)
         {
-            //Name = CreateNameForDevice();
+            string printerName = "Printer-" + new Random().Next(2000, 3000);
+            //string computerName = "Computer-" + new Random().Next(1000, 2000);
 
-            //return new RequestPrintForm
-            //(Name, CreateTextForPrint(id)); //Создаем информацию о подключении к принтеру
+            var request = new RequestPrintForm(printerName, document, Policy.Private);
 
-            //TODO: Доделать возврат запроса от пользователя к принтеру.
-            return null;
+            return request;
         }
     }
 }
