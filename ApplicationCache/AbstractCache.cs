@@ -12,22 +12,22 @@ namespace ApplicationCache
     {
         public static InteractionWithJson JsonFunctions { get; set; }
 
-        public void WriteInformationAboutRequestConnection(int id) // Запись информации о запросе, напрваленном принтеру
-        {
-            Console.WriteLine("Recording your request...");
+    //    public void WriteInformationAboutRequestConnection(int id) // Запись информации о запросе, напрваленном принтеру
+    //    {
+    //        Console.WriteLine("Recording your request...");
 
-            JsonFunctions.SerializeConnectionConfiguration(id); // Серриализация информации
+    //        JsonFunctions.SerializeConnectionConfiguration(id); // Серриализация информации
 
-            Console.WriteLine("The information your request was recorded succesfully!");
-        }
+    //        Console.WriteLine("The information your request was recorded succesfully!");
+    //    }
 
-        public void WriteInformationAboutDevice(string name) // Запись информации о девайсе
-        {
-            Console.WriteLine("Recording your computer information...");
+    //    public void WriteInformationAboutDevice(string name) // Запись информации о девайсе
+    //    {
+    //        Console.WriteLine("Recording your computer information...");
 
-            JsonFunctions.SerializeInformationAboutDevice(name); // Серриализация информации
+    //        JsonFunctions.SerializeInformationAboutDevice(name); // Серриализация информации
 
-            Console.WriteLine("The information was recorded succesfully!");
-        }
+    //        Console.WriteLine("The information was recorded succesfully!");
+    //    }
     }
 }

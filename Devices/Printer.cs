@@ -24,7 +24,7 @@ namespace ApplicationForPrinter
 
         }
 
-        public void ResponseConnection(ComputerPrint computer)
+        public void ResponseConnection(ComputerWorkWithDocument computer)
         {
 
         }

@@ -6,26 +6,26 @@ using System.Text;
 
 namespace Devices
 {
-    public abstract class DevicePrint
+    public abstract class ComputerWorkWithText
     {
-        public abstract string Name { get; set; }
+        //public abstract string Name { get; set; }
 
-        public string CreateNameForDevice()
-        {
-            Console.WriteLine("The computer is given a name...");
+        //public string CreateNameForDevice()
+        //{
+        //    Console.WriteLine("The computer is given a name...");
 
-            string name = null;
+        //    string name = null;
 
-            name += new Random().Next(1000, 9999);
+        //    name += new Random().Next(1000, 9999);
 
-            Name += name;
+        //    Name += name;
 
-            Console.WriteLine("The computer has been given a name!");
+        //    Console.WriteLine("The computer has been given a name!");
 
-            return Name;
-        }
+        //    return Name;
+        //}
 
-        private string CreateTextForPrint()
+        internal string CreateTextForPrint()
         {
             string text;
 
@@ -42,7 +42,7 @@ namespace Devices
             return text;
         }
 
-        private string CreateNameTextForPrint()
+        internal string CreateNameTextForPrint()
         {
             Console.WriteLine("Enter the title for the text...");
 
@@ -55,11 +55,6 @@ namespace Devices
             }
 
             return name;
-        }
-
-        public DocumentForPrint CreateDocumentForPrint(int id)
-        {
-            return new DocumentForPrint(id, CreateNameTextForPrint(), CreateTextForPrint());
         }
     }
 }

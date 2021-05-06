@@ -1,4 +1,5 @@
 ﻿using ApplicationStyles;
+using Devices;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,12 +10,15 @@ namespace ApplicationForPrinter
     {
         public static List<DocumentForPrint> documents = new List<DocumentForPrint>();
 
-        private ComputerPrint _informationAboutComputerPrint = new ComputerPrint();
-        public ComputerPrint InformationAboutComputerPrint
+        private ComputerWorkWithDocument _informationAboutComputerPrint = new ComputerWorkWithDocument();
+        public ComputerWorkWithDocument InformationAboutComputerPrint => _informationAboutComputerPrint;
+
+        private ComputerWorkWithConnection _informationAboutComputerWork = new ComputerWorkWithConnection();
+        public ComputerWorkWithConnection InformationAboutComputerWork
         {
             get
             {
-                return _informationAboutComputerPrint;
+                return _informationAboutComputerWork;
             }
         }
 

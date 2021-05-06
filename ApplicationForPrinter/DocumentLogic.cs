@@ -98,7 +98,7 @@ namespace ApplicationForPrinter
 
                 documents.Remove(doc);
                 UpdateIdForList(documents, id);
-                Cache.AddInformationAboutTheFiles(documents, FileMode.Open);
+                Cache.AddInformationAboutTheFiles(documents, FileMode.Truncate);
             }
         }
 
